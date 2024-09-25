@@ -2,6 +2,7 @@
 	"name": "@disgruntleddevs/sqlgen",
 	"version": "0.0.1",
 	"exports": "./src/index.ts",
+	"license": "MIT",
 	"publish.exclude": ["./test/*"],
 	"tasks": {
 		"dev": "deno run --watch main.ts"

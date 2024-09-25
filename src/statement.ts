@@ -80,7 +80,7 @@ export class Statement<T extends Record<string, unknown>> {
 	 * the insert statemtn
 	 *
 	 */
-	newInsertStatement({ ignored }: { ignored?: Ignored<T> }) {
+	newInsertStatement({ ignored }: { ignored?: Ignored<T> }): string {
 		if (!this.columnDefinitions) throw new Error("No column definitions set");
 
 		const keys = Object.keys(ignored || {});
