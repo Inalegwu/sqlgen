@@ -3,9 +3,11 @@ import { inferSQLiteType, isSQLiteType } from "./utils.ts";
 
 /**
  *
- * @class Statement constructs a new statement builder of a passed @type T
- * which will be used to infer fields
+ *  Constructs a new statement builder of a passed @type T
+ *  which will be used to infer fields
  *
+ * @class Statement
+ * @returns Statement
  */
 export class Statement<T extends Record<string, unknown>> {
 	declare type: T;
@@ -13,12 +15,10 @@ export class Statement<T extends Record<string, unknown>> {
 	columnDefinitions: ColumnDefinition[] | null = null;
 
 	/**
+	 * The name of the table this statement builder works on
 	 *
 	 * @function constructor
-	 * @param tableName: @type
-	 *
-	 * string The name of the table this statement builder works on
-	 *
+	 * @param tableName: string
 	 */
 	constructor(tableName: string) {
 		this.tableName = tableName;
@@ -26,11 +26,10 @@ export class Statement<T extends Record<string, unknown>> {
 
 	/**
 	 *
+	 * Generate the internal column definitions used by the statement builder
+	 *
 	 * @function setColumnDefinitions
 	 * @returns void
-	 *
-	 * : generate the internal column definitions used by the statement builder
-	 *
 	 */
 	setColumnDefinitions(userType: T): void {
 		if (this.columnDefinitions === null) {
@@ -40,11 +39,10 @@ export class Statement<T extends Record<string, unknown>> {
 
 	/**
 	 *
+	 * Generates an SQL create statement based on the internal column definitions
+	 *
 	 * @function newCreateStatement
 	 * @returns string
-	 *
-	 * generates and SQL create statement based on the internal column definitions
-	 *
 	 */
 	newCreateStatement(): string {
 		if (this.columnDefinitions === null) {
@@ -70,15 +68,14 @@ export class Statement<T extends Record<string, unknown>> {
 
 	/**
 	 *
-	 * @function newInsertStatement
-	 * @returns string
-	 * @param Ignored
 	 *
-	 * generates an SQL insert statement based on the internal
+	 * Generates an SQL insert statement based on the internal
 	 * column definitions.
 	 * the user can also specify fields to ignore when generate
 	 * the insert statemtn
 	 *
+	 * @param Ignored
+	 * @returns string
 	 */
 	newInsertStatement({ ignored }: { ignored?: Ignored<T> }): string {
 		if (!this.columnDefinitions) throw new Error("No column definitions set");
@@ -133,10 +130,10 @@ export class Statement<T extends Record<string, unknown>> {
 
 /**
  *
- * @type Ignored
  * fields of an internal type
  * signature to be ignored
  *
+ * @type Ignored
  */
 export type Ignored<T> = {
 	[K in keyof T]?: boolean;
