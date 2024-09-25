@@ -1,0 +1,41 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "jsr:@disgruntleddevs/make-safe-func@^0.1.2": "jsr:@disgruntleddevs/make-safe-func@0.1.2",
+      "jsr:@std/assert@1": "jsr:@std/assert@1.0.6",
+      "jsr:@std/internal@^1.0.4": "jsr:@std/internal@1.0.4",
+      "npm:neverthrow@8.0.0": "npm:neverthrow@8.0.0"
+    },
+    "jsr": {
+      "@disgruntleddevs/make-safe-func@0.1.2": {
+        "integrity": "2ac7b2a2d4362228c5cfc47f365f3ab2fb52e6879de844eeede4c28bd89acc56",
+        "dependencies": [
+          "npm:neverthrow@8.0.0"
+        ]
+      },
+      "@std/assert@1.0.6": {
+        "integrity": "1904c05806a25d94fe791d6d883b685c9e2dcd60e4f9fc30f4fc5cf010c72207",
+        "dependencies": [
+          "jsr:@std/internal@^1.0.4"
+        ]
+      },
+      "@std/internal@1.0.4": {
+        "integrity": "62e8e4911527e5e4f307741a795c0b0a9e6958d0b3790716ae71ce085f755422"
+      }
+    },
+    "npm": {
+      "neverthrow@8.0.0": {
+        "integrity": "sha512-SX2Z50+U27I+CF3NwHE9J8MB6+bYRRub3U+1nAKxnL6c+2vW2l/WsYEC0e3Wqg8DwiJvrquqE0YhxlVTzGJGsg==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "dependencies": [
+      "jsr:@disgruntleddevs/make-safe-func@^0.1.2",
+      "jsr:@std/assert@1"
+    ]
+  }
+}

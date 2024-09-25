@@ -1,16 +1,17 @@
 {
-	"name": "@disgruntleddevs/sqlgen",
-	"version": "0.0.6",
-	"exports": "./src/index.ts",
-	"license": "MIT",
-	"publish.exclude": ["./test/*"],
-	"fmt": {
-		"useTabs": false,
-		"indentWidth": 2,
-		"semiColons": true,
-		"singleQuote": true
-	},
-	"imports": {
-		"@std/assert": "jsr:@std/assert@1"
-	}
+  "name": "@disgruntleddevs/sqlgen",
+  "version": "0.0.6",
+  "exports": "./src/index.ts",
+  "license": "MIT",
+  "publish.exclude": ["./test/*"],
+  "fmt": {
+    "useTabs": false,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": true
+  },
+  "imports": {
+    "@disgruntleddevs/make-safe-func": "jsr:@disgruntleddevs/make-safe-func@^0.1.2",
+    "@std/assert": "jsr:@std/assert@1"
+  }
 }
