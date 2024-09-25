@@ -1,11 +1,27 @@
 import type { SQLiteType } from "./types.ts";
 
+/**
+ *
+ * confirms if the passed in value
+ * is a valid sqlite type
+ *
+ * @param type any
+ * @returns SQLiteType
+ */
 // Type guard to check if a value is a valid SQLiteType
 // biome-ignore lint/suspicious/noExplicitAny: ignore
 export function isSQLiteType(type: any): type is SQLiteType {
 	return ["TEXT", "INTEGER", "REAL", "BLOB"].includes(type);
 }
 
+/**
+ * Generic function which trys to determine
+ * the equivalent sqlite type of a typescript
+ * standard type
+ *
+ * @param key T
+ * @returns
+ */
 export function inferSQLiteType<T>(key: keyof T): SQLiteType {
 	const typeofProperty = typeof {} as T[typeof key];
 	switch (typeofProperty) {

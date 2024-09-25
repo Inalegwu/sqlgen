@@ -1,6 +1,8 @@
 /**
  *
- * @type ColumnDefinition: Internal Column Definition of the statement builder
+ * Internal Column Definition of the statement builder
+ *
+ * @type ColumnDefinition
  *
  */
 export type ColumnDefinition = {
@@ -13,7 +15,8 @@ export type ColumnDefinition = {
 
 /**
  *
- * @type SQLiteType: Possible SQLite Types
+ * Possible SQLite Types
  *
+ * @type SQLiteType
  */
 export type SQLiteType = "TEXT" | "INTEGER" | "REAL" | "BLOB";
